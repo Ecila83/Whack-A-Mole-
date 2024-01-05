@@ -16,7 +16,7 @@ body {
     flex-wrap: wrap;
 }
 
-.carte {
+.case {
     width: 150px;
     height: 150px;
     border: 1px solid rgb(157, 96, 11);
@@ -26,8 +26,11 @@ body {
 .taupe {
     width: 150px;
     height: 150px;
+
     background-image: url('img/petite-taupe-fond-blanc_1308-91807.avif');
     background-size: contain;
+    background-repeat: no-repeat;
+    
     animation: appear 0.9s;
 }
 

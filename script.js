@@ -1,5 +1,5 @@
 
-const cases = document.querySelectorAll('.carte');
+const cases = document.querySelectorAll('.case');
 const scoreEl = document.querySelector('#score');
 const tempsEl = document.querySelector('#temps');
 const startBtn = document.querySelector('#start');
@@ -8,11 +8,14 @@ let score = 0;
 let tempsRestant = 10;
 let position;
 
-cases.forEach(carte => {
-    carte.addEventListener('click', () => {
-        if (parseInt(carte.getAttribute('data-index')) === position) {
+cases.forEach(c => {
+    const cartePosition = parseInt(c.dataset.index)
+
+    c.addEventListener('click', () => {
+        if (cartePosition === position) {
             score++;
             scoreEl.innerHTML = score;
+            position = -1
         }
     })
 });
@@ -20,8 +23,8 @@ cases.forEach(carte => {
 function start() {
     resetjeu();
     let debutJeu = setInterval(() => {
-        cases.forEach(carte => {
-            carte.innerHTML = '';
+        cases.forEach(c => {
+            c.innerHTML = '';
         });
 
         position = Math.floor(Math.random() * 12);
